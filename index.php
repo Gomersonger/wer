@@ -35,7 +35,7 @@ function random_output_plus($counter=0)
   }
   else {
     for ($i=0; $i < $counter ; $i++) {
-        $numberIter=rand(-100,100);
+        $numberIter=rand(-101,101);
         if($i==0){
           echo $numberIter." Начальное <br/>";
           $number_before=$numberIter;
@@ -55,5 +55,5 @@ function random_output_plus($counter=0)
 
 }
 
-random_output_plus(10);\
+random_output_plus(10);
  ?>
