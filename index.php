@@ -56,4 +56,31 @@ function random_output_plus($counter=0)
 }
 
 random_output_plus(10);
+
+//Задача № 4 Вывести на экран n-ное число Фибоначчи. Пример последовательности:
+
+function fibonachi_numbers($maxValue=0){
+  if($maxValue>0){
+    $numberF=0;
+    $numberS=1;
+    $counter=0;
+    echo $numberF."<br/>";
+    echo $numberS."<br/>";
+        while ($counter < $maxValue) {
+          $counter=$numberF+$numberS;
+          if($counter>$maxValue){
+            break;
+          }else {
+            echo $counter."<br/>";
+            $numberF=$numberS;
+            $numberS=$counter;
+          }
+        }
+      }
+  else {
+    echo "Ваше значение:".$maxValue." НЕВЕРНО, число должно быть строго больше 0";
+  }
+}
+fibonachi_numbers(100);
+
  ?>
