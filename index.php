@@ -88,4 +88,15 @@ fibonachi_numbers(100);
  //Задача № 5 Дано некоторое число длиной от 1 до 5 цифр - вывести его цифры в обратном порядке.
 function backNumbers($value=512)
 {
+  $calculate = 0;
+  $num=0;
+  echo $value."= ";
+  while ($value > 0) {
+    $num = $value % 10;
+    $value = intdiv($value,10);
+    $calculate= $calculate*10+$num;
+    echo "<br/>".$calculate;
+  }
+}
+backNumbers(512);
  ?>
