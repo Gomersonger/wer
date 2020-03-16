@@ -90,13 +90,17 @@ function backNumbers($value=512)
 {
   $calculate = 0;
   $num=0;
-  echo $value."= ";
+  echo $value." =  <br/>";
   while ($value > 0) {
     $num = $value % 10;
     $value = intdiv($value,10);
     $calculate= $calculate*10+$num;
-    echo "<br/>".$calculate;
   }
+  $calculate=$calculate."";
+for ($i=0; $i <iconv_strlen($calculate) ; $i++) {
+  echo $calculate[$i]."<br/>";
 }
-backNumbers(512);
+
+}
+backNumbers(1024);
  ?>
