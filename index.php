@@ -57,7 +57,7 @@ function random_output_plus($counter=0)
 
 random_output_plus(10);
 
-//Задача № 4 Вывести на экран n-ное число Фибоначчи. Пример последовательности:
+//Задача № 4 Вывести на экран n-ное число Фибоначчи.
 
 function fibonachi_numbers($maxValue=0){
   if($maxValue>0){
@@ -83,4 +83,9 @@ function fibonachi_numbers($maxValue=0){
 }
 fibonachi_numbers(100);
 
+
+
+ //Задача № 5 Дано некоторое число длиной от 1 до 5 цифр - вывести его цифры в обратном порядке.
+function backNumbers($value=512)
+{
  ?>
