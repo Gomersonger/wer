@@ -10,7 +10,6 @@ function random_output($counter=0)
         echo (rand(-21, 35))."<br/>";
     }
   }
-
 }
 
 random_output(10);
