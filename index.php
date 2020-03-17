@@ -102,5 +102,28 @@ for ($i=0; $i <iconv_strlen($calculate) ; $i++) {
 }
 
 }
-backNumbers(1024);
+backNumbers(2312312);
+
+//Задача № 6 Дано некоторое число длиной от 1 до 5 символов, вывести все его "нечётные" цифры в обратном порядке
+echo "<br/>";
+
+function backNumbersEven($value=512)
+{
+  $calculate = 0;
+  $num=0;
+  echo $value." =  <br/>";
+  while ($value > 0) {
+    $num = $value % 10;
+    $value = intdiv($value,10);
+    $calculate= $calculate*10+$num;
+  }
+  $calculate=$calculate."";
+for ($i=0; $i <iconv_strlen($calculate) ; $i++) {
+  if ($calculate[$i] % 2 !== 0){
+    echo $calculate[$i]."<br/>";
+  }
+}
+
+}
+backNumbersEven(8877865);
  ?>
