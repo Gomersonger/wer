@@ -118,12 +118,33 @@ function backNumbersEven($value=512)
     $calculate= $calculate*10+$num;
   }
   $calculate=$calculate."";
-for ($i=0; $i <iconv_strlen($calculate) ; $i++) {
+  $countNum = 0;
+for ($i = 0; $i < iconv_strlen($calculate); $i++) {
   if ($calculate[$i] % 2 !== 0){
     echo $calculate[$i]."<br/>";
+    $countNum++;
   }
 }
 
+if ($countNum == 0){
+  echo "Нечетных цифр не обнаружено!";
 }
-backNumbersEven(8877865);
+
+}
+backNumbersEven(1231231);
+
+//Задача №7 Задать массив из 7-ми элементов через предварительное описание типа,
+// заполнить его случайными значениями в одном цикле,
+// а в другом цикле вывести эти значения на экран.
+function buildArray($arraySize = 1){
+  $Myarray = array();
+  for ($i = 0; $i < $arraySize ; $i++) {
+    $Myarray[$i] = rand(1,999);
+  }
+
+  for ($j = 0; $j < count($Myarray) ; $j++) {
+    echo $Myarray[$j]."<br/>";
+  }
+}
+buildArray(10);
  ?>
