@@ -137,7 +137,7 @@ backNumbersEven(1231231);
 // заполнить его случайными значениями в одном цикле,
 // а в другом цикле вывести эти значения на экран.
 function buildArray($arraySize = 1){
-  $Myarray = array();
+  $Myarray = [];
   for ($i = 0; $i < $arraySize ; $i++) {
     $Myarray[$i] = rand(1,999);
   }
@@ -147,4 +147,36 @@ function buildArray($arraySize = 1){
   }
 }
 buildArray(10);
+
+
+echo "<h1>№8</h1>";
+//Задача №8  Задать двумерный массив размерностью m на n (MxN) элементов
+// (m и n вынести в область определения констант),
+// заполнить его случайными значениями и вывести
+// их на экран уже после того, как весь массив будет
+// заполнен (т.е. заполнять и выводить в разных группах циклов).
+$M = 4;
+$N = 5;
+function build_two_dimensional_array(){
+  $SuperArray = [];
+  global $M;
+  global $N;
+
+for ($i = 0; $i < $M; $i++)   {
+  $SuperArray[$i] = [];
+  for ($j = 0; $j <$N ; $j++) {
+    $SuperArray[$i][$j] = rand(1,100);
+  }
+}
+
+foreach ($SuperArray as $key ) {
+  echo "<br/>";
+  foreach ($key as $final ) {
+    echo $final."<br/>";
+    }
+  }
+}
+
+build_two_dimensional_array();
+
  ?>
