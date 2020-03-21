@@ -179,4 +179,43 @@ foreach ($SuperArray as $key ) {
 
 build_two_dimensional_array();
 
+echo "<h1>№9</h1>";
+//Задача №9 Задайте случайным образом массив из N элементов.
+// Выведите его на экран "ёлочкой".
+
+function fir_tree($arraySize = 1){
+  $treeArray = [];
+  for ($i = 0; $i < $arraySize; $i++) {
+    $treeArray[$i] = rand(1,9);
+  }
+$count=0;
+$Chars=0;
+  for ($j = 0; $j < count($treeArray); $j++) {
+    echo $treeArray[$j];
+    $count=$count+1;
+    if($count>$Chars){
+        echo "<br/>";
+        $count=0;
+        $Chars+=1;
+    }
+  }
+}
+fir_tree(10);
+echo "<h1>№9 Второй вариант</h1>";
+//Второй вариант - сделайте то же самое, но не используйте массив: у вас есть переменная N,
+//выведете на экран, все числа до N,
+function fir_tree_numbers($numberN = 100){
+$count=0;
+$Chars=0;
+  for ($j = 0; $j <= $numberN; $j++) {
+    echo $j.",";
+    $count=$count+1;
+    if($count>$Chars){
+        echo "<br/>";
+        $count=0;
+        $Chars+=1;
+    }
+  }
+}
+fir_tree_numbers(100);
  ?>
