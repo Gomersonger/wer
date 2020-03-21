@@ -188,15 +188,15 @@ function fir_tree($arraySize = 1){
   for ($i = 0; $i < $arraySize; $i++) {
     $treeArray[$i] = rand(1,9);
   }
-$count=0;
-$Chars=0;
+$count = 0;
+$Chars = 0;
   for ($j = 0; $j < count($treeArray); $j++) {
     echo $treeArray[$j];
-    $count=$count+1;
-    if($count>$Chars){
+    $count = $count + 1;
+  if($count > $Chars){
         echo "<br/>";
-        $count=0;
-        $Chars+=1;
+        $count = 0;
+        $Chars += 1;
     }
   }
 }
@@ -205,15 +205,15 @@ echo "<h1>№9 Второй вариант</h1>";
 //Второй вариант - сделайте то же самое, но не используйте массив: у вас есть переменная N,
 //выведете на экран, все числа до N,
 function fir_tree_numbers($numberN = 100){
-$count=0;
-$Chars=0;
+$count = 0;
+$Chars = 0;
   for ($j = 0; $j <= $numberN; $j++) {
     echo $j.",";
-    $count=$count+1;
-    if($count>$Chars){
+    $count = $count + 1;
+    if($count > $Chars){
         echo "<br/>";
-        $count=0;
-        $Chars+=1;
+        $count = 0;
+        $Chars += 1;
     }
   }
 }
