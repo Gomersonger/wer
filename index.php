@@ -206,16 +206,54 @@ echo "<h1>№9 Второй вариант</h1>";
 //выведете на экран, все числа до N,
 function fir_tree_numbers($numberN = 100){
 $count = 0;
-$Chars = 0;
+$chars = 0;
   for ($j = 0; $j <= $numberN; $j++) {
     echo $j.",";
     $count = $count + 1;
-    if($count > $Chars){
+    if($count > $chars){
         echo "<br/>";
         $count = 0;
-        $Chars += 1;
+        $chars += 1;
     }
   }
 }
 fir_tree_numbers(100);
+echo "<h1>№10</h1>";
+//Задача №10 Задайте случайным образом массив из N элементов (целых чисел).
+// Найдите максимальное число и напечатайте его.
+function maxNumberInArray($value=10)
+{
+  for ($i = 0; $i < $value ; $i++) {
+    $Myarray[$i] = rand(1,999);
+  }
+  $numberMax=$Myarray[0];
+  for ($j=0; $j < count($Myarray); $j++) {
+    if($numberMax<$Myarray[$j]){
+      $numberMax=$Myarray[$j];
+    }
+  }
+  echo $numberMax."";
+}
+maxNumberInArray(10);
+
+
+echo "<h1>№11</h1>";
+
+//Задача №11 Задайте случайным образом массив из 20-ти элементов (целых чисел).
+//Найдите минимальное число и напечатайте его.
+define("N",20);
+function minNumberInArray()
+{
+  for ($i = 0; $i < N ; $i++) {
+    $Myarray[$i] = rand(1,999);
+  }
+  $numberMin=$Myarray[0];
+  for ($j=0; $j < count($Myarray); $j++) {
+    if($numberMin>$Myarray[$j]){
+      $numberMin=$Myarray[$j];
+    }
+  }
+  echo $numberMin."";
+}
+minNumberInArray(10);
  ?>
