@@ -275,22 +275,25 @@ function comparisonTwoArrays(){
     $secondArray[$j] = rand(-100,100);
   }
 
+  $counter = 2;
   for ($q = 0; $q <count($firstArray); $q++) {
-    if($q % 4 === 1 ){
-      if($firstArray[$q]>$secondArray[$q-1]){
-        echo $firstArray[$q]." больше чем ".$secondArray[$q-1]."<br/>";
-      }elseif ($firstArray[$q]==$secondArray[$q-1]) {
-        echo $firstArray[$q]." Равны ".$secondArray[$q-1]."<br/>";
+    if($q == $counter){
+      if($firstArray[$counter]>$secondArray[$counter-1]){
+        echo $firstArray[$counter]." больше чем ".$secondArray[$counter-1]."<br/>";
+      }elseif ($firstArray[$counter]==$secondArray[$counter-1]) {
+        echo $firstArray[$counter]." Равны ".$secondArray[$counter-1]."<br/>";
 
       }else {
-        echo $firstArray[$q]." меньше чем ".$secondArray[$q-1]."<br/>";
+        echo $firstArray[$counter]." меньше чем ".$secondArray[$counter-1]."<br/>";
       }
 
+        $counter = $counter+3;
 
     }
-    if(!(array_key_exists($q,$secondArray))){
+    if($counter>(count($secondArray))){
       break;
     }
+
 
   }
 
