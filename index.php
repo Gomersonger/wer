@@ -276,7 +276,7 @@ function comparisonTwoArrays(){
   }
 
   for ($q = 0; $q <count($firstArray); $q++) {
-    if($q%4===1){
+    if($q % 4 === 1 ){
       if($firstArray[$q]>$secondArray[$q-1]){
         echo $firstArray[$q]." больше чем ".$secondArray[$q-1]."<br/>";
       }elseif ($firstArray[$q]==$secondArray[$q-1]) {
@@ -286,7 +286,12 @@ function comparisonTwoArrays(){
         echo $firstArray[$q]." меньше чем ".$secondArray[$q-1]."<br/>";
       }
 
+
     }
+    if(!(array_key_exists($q,$secondArray))){
+      break;
+    }
+
   }
 
 }
