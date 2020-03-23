@@ -137,13 +137,13 @@ backNumbersEven(1231231);
 // заполнить его случайными значениями в одном цикле,
 // а в другом цикле вывести эти значения на экран.
 function buildArray($arraySize = 1){
-  $Myarray = [];
+  $myArray = [];
   for ($i = 0; $i < $arraySize ; $i++) {
-    $Myarray[$i] = rand(1,999);
+    $myArray[$i] = rand(1,999);
   }
 
-  for ($j = 0; $j < count($Myarray) ; $j++) {
-    echo $Myarray[$j]."<br/>";
+  for ($j = 0; $j < count($myArray) ; $j++) {
+    echo $myArray[$j]."<br/>";
   }
 }
 buildArray(10);
@@ -158,18 +158,18 @@ echo "<h1>№8</h1>";
 $M = 4;
 $N = 5;
 function build_two_dimensional_array(){
-  $SuperArray = [];
+  $superArray = [];
   global $M;
   global $N;
 
 for ($i = 0; $i < $M; $i++)   {
-  $SuperArray[$i] = [];
+  $superArray[$i] = [];
   for ($j = 0; $j <$N ; $j++) {
-    $SuperArray[$i][$j] = rand(1,100);
+    $superArray[$i][$j] = rand(1,100);
   }
 }
 
-foreach ($SuperArray as $key ) {
+foreach ($superArray as $key ) {
   echo "<br/>";
   foreach ($key as $final ) {
     echo $final."<br/>";
@@ -224,12 +224,12 @@ echo "<h1>№10</h1>";
 function maxNumberInArray($value=10)
 {
   for ($i = 0; $i < $value ; $i++) {
-    $Myarray[$i] = rand(1,999);
+    $myArray[$i] = rand(1,999);
   }
-  $numberMax=$Myarray[0];
-  for ($j=0; $j < count($Myarray); $j++) {
-    if($numberMax<$Myarray[$j]){
-      $numberMax=$Myarray[$j];
+  $numberMax=$myArray[0];
+  for ($j=0; $j < count($myArray); $j++) {
+    if($numberMax<$myArray[$j]){
+      $numberMax=$myArray[$j];
     }
   }
   echo $numberMax."";
@@ -245,15 +245,75 @@ define("N",20);
 function minNumberInArray()
 {
   for ($i = 0; $i < N ; $i++) {
-    $Myarray[$i] = rand(1,999);
+    $myArray[$i] = rand(1,999);
   }
-  $numberMin=$Myarray[0];
-  for ($j=0; $j < count($Myarray); $j++) {
-    if($numberMin>$Myarray[$j]){
-      $numberMin=$Myarray[$j];
+  $numberMin=$myArray[0];
+  for ($j=0; $j < count($myArray); $j++) {
+    if($numberMin>$myArray[$j]){
+      $numberMin=$myArray[$j];
     }
   }
   echo $numberMin."";
 }
 minNumberInArray(10);
+
+echo "<h1>№12</h1>";
+
+// Задача №12  Даны два массива по 20 элементов каждый
+// (заполните случайными числами, так чтобы среди элементов массива при очередном
+// запуске программы могли встретиться и отрицательные и положительные числа).
+// Сравните каждый 3-ий элемент 1-ого массива с каждый 2-ым элементов 2-ого массива
+//  - сравнение проводите пока не закончится та выборка, которая короче.
+
+function comparisonTwoArrays(){
+  $firstArray = [];
+  for ($i = 0; $i < 20; $i++) {
+    $firstArray[$i] = rand(-100,100);
+  }
+  $secondArray = [];
+  for ($j = 0; $j < 20; $j++) {
+    $secondArray[$j] = rand(-100,100);
+  }
+
+  for ($q = 0; $q <count($firstArray); $q++) {
+    if($q%4===1){
+      if($firstArray[$q]>$secondArray[$q-1]){
+        echo $firstArray[$q]." больше чем ".$secondArray[$q-1]."<br/>";
+      }elseif ($firstArray[$q]==$secondArray[$q-1]) {
+        echo $firstArray[$q]." Равны ".$secondArray[$q-1]."<br/>";
+
+      }else {
+        echo $firstArray[$q]." меньше чем ".$secondArray[$q-1]."<br/>";
+      }
+
+    }
+  }
+
+}
+comparisonTwoArrays();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  ?>
