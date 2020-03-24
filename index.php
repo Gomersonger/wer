@@ -301,8 +301,37 @@ function comparisonTwoArrays(){
 comparisonTwoArrays();
 
 
+echo "<h1>№13</h1>";
 
+//Создайте функцию, которая принимает на вход массив случайных чисел из диапазона [5..12].
+//Обходит этот массив и делает для каждого элемента следующее (пусть она оказывает побочный эффект прямо в своём теле):
+//Если это число равно 5 -- то выведете на экран строку "пять",
+//если 6 -- то строку "шесть", если 7 то число "7",
+//иначе -- строку "какое-то другое число".
 
+$newArray = [];
+for ($i = 0; $i < 20 ; $i++) {
+  $newArray[$i] = rand(5,12);
+}
+function enterArray($otherArray){
+    foreach ($otherArray as $key) {
+    switch ($key) {
+      case 5:
+        echo "пять"."<br/>";
+        break;
+      case 6:
+        echo "шесть"."<br/>";
+        break;
+      case 7:
+        echo "7"."<br/>";
+        break;
+      default:
+      echo "какое-то другое число"."<br/>";
+        break;
+    }
+    }
+}
+enterArray($newArray);
 
 
 
