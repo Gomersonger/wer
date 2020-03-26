@@ -335,22 +335,33 @@ enterArray($newArray);
 
 
 
+echo "<h1>№14</h1>";
+// Задача #14 Есть два массива "a" и "b". На вход вашей программе подаётся массив "a" случайных чисел 
+// (10 элементов) из диапазона от 1 до 20.
+// Задача: вывести на экран все числа, которые не содержатся в массиве "b"
 
 
+for ($i = 0; $i < 10 ; $i++) {
+  $a_array[$i] = rand(1,10);
+}
+$b_array = [12, 5, 17, 6, 4];
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+function comparisonNumbersArray($someArray=[]){
+  $myArray = $someArray;
+  global $b_array;
+  for ($i = 0; $i < count($someArray) ; $i++) {
+    for ($k=0; $k < count($b_array) ; $k++) {
+      if ($someArray[$i] == $b_array[$k]) {
+          unset($myArray[$i]);
+      }
+        }
+    }
+  $resultArray = array_unique($myArray);
+  foreach ($resultArray as $key ) {
+    echo $key."<br/>";
+  }
+}
+comparisonNumbersArray($a_array);
 
 
  ?>
