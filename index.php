@@ -50,8 +50,6 @@ function random_output_plus($counter=0)
         echo $numberIter." Меньше <br/>";
           $number_before = $numberIter;
         }
-
-
     }
   }
 
