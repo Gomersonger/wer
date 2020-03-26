@@ -335,11 +335,12 @@ enterArray($newArray);
 
 
 
-echo "<h1>№14</h1>";
-// Задача #14 Есть два массива "a" и "b". На вход вашей программе подаётся массив "a" случайных чисел 
+echo "<h1>№14 Вариант 1 без использования   in_array()</h1>";
+// Задача #14 Есть два массива "a" и "b". На вход вашей программе подаётся массив "a" случайных чисел
 // (10 элементов) из диапазона от 1 до 20.
 // Задача: вывести на экран все числа, которые не содержатся в массиве "b"
 
+// Вариант первый без использования   in_array()
 
 for ($i = 0; $i < 10 ; $i++) {
   $a_array[$i] = rand(1,10);
@@ -363,5 +364,21 @@ function comparisonNumbersArray($someArray=[]){
 }
 comparisonNumbersArray($a_array);
 
+echo "<h1>№14 Вариант 2 с использованием  in_array()</h1>";
 
+
+function comparisonNumbersArray2($someArray=[]){
+  $myArray = $someArray;
+  global $b_array;
+  for ($i = 0; $i < count($someArray) ; $i++) {
+    if ( in_array($someArray[$i],$b_array) ) {
+      unset($myArray[$i]);
+      }
+    }
+  $resultArray = array_unique($myArray);
+  foreach ($resultArray as $key ) {
+    echo $key."<br/>";
+  }
+}
+comparisonNumbersArray2($a_array);
  ?>
