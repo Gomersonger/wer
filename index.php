@@ -32,7 +32,7 @@ echo "<h1>№3</h1>";
 
 function random_output_plus($counter=0)
 {
-  if ($counter < = 0){
+  if ($counter <= 0){
         echo "Число повторений(N) отрицательное,отсутсвует или равно 0.<br/>";
   }
   else {
