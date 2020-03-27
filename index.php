@@ -32,13 +32,13 @@ echo "<h1>№3</h1>";
 
 function random_output_plus($counter=0)
 {
-  if ($counter<=0){
+  if ($counter < = 0){
         echo "Число повторений(N) отрицательное,отсутсвует или равно 0.<br/>";
   }
   else {
     for ($i=0; $i < $counter ; $i++) {
         $numberIter = rand(-101,101);
-        if ($i==0){
+        if ($i == 0){
             echo $numberIter." Начальное <br/>";
             $number_before = $numberIter;
         }
@@ -50,11 +50,8 @@ function random_output_plus($counter=0)
         echo $numberIter." Меньше <br/>";
           $number_before = $numberIter;
         }
-
-
     }
   }
-
 }
 
 random_output_plus(10);
@@ -88,9 +85,9 @@ function fibonachi_numbers($maxValue = 0){
 fibonachi_numbers(100);
 
 
- echo "<h1>№5</h1>";
+echo "<h1>№5</h1>";
  //Задача № 5 Дано некоторое число длиной от 1 до 5 цифр - вывести его цифры в обратном порядке.
-function backNumbers($value=512)
+function backNumbers($value = 512)
 {
   $calculate = 0;
   $num = 0;
@@ -101,10 +98,9 @@ function backNumbers($value=512)
     $calculate = $calculate * 10 + $num;
   }
   $calculate = $calculate."";
-for ($i=0; $i < iconv_strlen($calculate); $i++) {
-  echo $calculate[$i]."<br/>";
-}
-
+  for ($i=0; $i < iconv_strlen($calculate); $i++) {
+    echo $calculate[$i]."<br/>";
+  }
 }
 backNumbers(2312312);
 
@@ -128,13 +124,11 @@ for ($i = 0; $i < iconv_strlen($calculate); $i++) {
   if ($calculate[$i] % 2 !== 0){
     echo $calculate[$i]."<br/>";
     $countNum++;
+    }
   }
-}
-
 if ($countNum == 0){
-  echo "Нечетных цифр не обнаружено!";
-}
-
+    echo "Нечетных цифр не обнаружено!";
+  }
 }
 backNumbersEven(1231231);
 
@@ -147,13 +141,11 @@ function buildArray($arraySize = 1){
   for ($i = 0; $i < $arraySize; $i++) {
     $myArray[$i] = rand(1,999);
   }
-
   for ($j = 0; $j < count($myArray) ; $j++) {
     echo $myArray[$j]."<br/>";
   }
 }
 buildArray(10);
-
 
 echo "<h1>№8</h1>";
 //Задача №8  Задать двумерный массив размерностью m на n (MxN) элементов
@@ -235,8 +227,8 @@ function maxNumberInArray($value=10)
   }
   $numberMax=$myArray[0];
   for ($j=0; $j < count($myArray); $j++) {
-    if($numberMax<$myArray[$j]){
-      $numberMax=$myArray[$j];
+    if($numberMax < $myArray[$j]){
+      $numberMax = $myArray[$j];
     }
   }
   echo $numberMax."";
@@ -256,8 +248,8 @@ function minNumberInArray()
   }
   $numberMin=$myArray[0];
   for ($j=0; $j < count($myArray); $j++) {
-    if($numberMin>$myArray[$j]){
-      $numberMin=$myArray[$j];
+    if($numberMin > $myArray[$j]){
+      $numberMin = $myArray[$j];
     }
   }
   echo $numberMin."";
@@ -285,25 +277,20 @@ function comparisonTwoArrays(){
   $counter = 2;
   for ($q = 0; $q <count($firstArray); $q++) {
     if($q == $counter){
-      if($firstArray[$counter]>$secondArray[$counter-1]){
+      if($firstArray[$counter] > $secondArray[$counter-1]){
         echo $firstArray[$counter]." больше чем ".$secondArray[$counter-1]."<br/>";
-      }elseif ($firstArray[$counter]==$secondArray[$counter-1]) {
+      }elseif ($firstArray[$counter] == $secondArray[$counter-1]) {
         echo $firstArray[$counter]." Равны ".$secondArray[$counter-1]."<br/>";
 
       }else {
         echo $firstArray[$counter]." меньше чем ".$secondArray[$counter-1]."<br/>";
       }
-
         $counter = $counter+3;
-
     }
     if($counter>(count($secondArray))){
       break;
     }
-
-
   }
-
 }
 comparisonTwoArrays();
 
@@ -335,7 +322,7 @@ function enterArray($otherArray){
       default:
       echo "какое-то другое число"."<br/>";
         break;
-    }
+      }
     }
 }
 enterArray($newArray);
@@ -353,7 +340,6 @@ for ($i = 0; $i < 10 ; $i++) {
   $a_array[$i] = rand(1,10);
 }
 $b_array = [12, 5, 17, 6, 4];
-
 function comparisonNumbersArray($someArray=[]){
   $myArray = $someArray;
   global $b_array;
