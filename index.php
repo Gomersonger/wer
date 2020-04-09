@@ -61,28 +61,33 @@ echo "<h1>№4</h1>";
 //Задача № 4 Вывести на экран n-ное число Фибоначчи.
 
 function fibonachi_numbers($maxValue = 0){
-  if($maxValue > 0){
+  if($maxValue > 2){
     $numberF = 0;
     $numberS = 1;
     $counter = 0;
-    echo $numberF."<br/>";
-    echo $numberS."<br/>";
-        while ($counter < $maxValue) {
-          $counter = $numberF + $numberS;
-          if($counter > $maxValue){
-            break;
-          }else {
-            echo $counter."<br/>";
-            $numberF = $numberS;
-            $numberS = $counter;
-          }
-        }
+    for ($i=2; $i <$maxValue ; $i++) {
+      $counter = $numberF + $numberS;
+      if($i > $maxValue){
+        break;
+      }else {
+        $numberF = $numberS;
+        $numberS = $counter;
       }
-  else {
+
+    }
+
+
+          echo ($counter)."<br/>";
+      }
+  elseif($maxValue == 1) {
+    echo "0";
+  }elseif($maxValue == 2) {
+      echo "1";
+  }else {
     echo "Ваше значение:".$maxValue." НЕВЕРНО, число должно быть строго больше 0";
   }
 }
-fibonachi_numbers(100);
+fibonachi_numbers(7);
 
 
 echo "<h1>№5</h1>";
@@ -94,15 +99,18 @@ function backNumbers($value = 512)
   echo $value." =  <br/>";
   while ($value > 0) {
     $num = $value % 10;
+      echo $num."  <br/>";
     $value = intdiv($value,10);
     $calculate = $calculate * 10 + $num;
+    // echo $calculate;
   }
-  $calculate = $calculate."";
-  for ($i=0; $i < iconv_strlen($calculate); $i++) {
-    echo $calculate[$i]."<br/>";
-  }
+  // echo $calculate;
+  // $calculate = $calculate."";
+  // for ($i=0; $i < iconv_strlen($calculate); $i++) {
+  //   echo $calculate[$i]."<br/>";
+  // }
 }
-backNumbers(2312312);
+backNumbers(987654321);
 
 echo "<h1>№6</h1>";
 //Задача № 6 Дано некоторое число длиной от 1 до 5 символов, вывести все его "нечётные" цифры в обратном порядке
@@ -112,25 +120,22 @@ function backNumbersEven($value=512)
 {
   $calculate = 0;
   $num = 0;
+  $countNum =0;
   echo $value." =  <br/>";
   while ($value > 0) {
     $num = $value % 10;
+    if ($num % 2 !== 0) {
+      echo $num."<br>";
+      $countNum = $countNum+1;
+    }
     $value = intdiv($value,10);
     $calculate = $calculate * 10 + $num;
-  }
-  $calculate = $calculate."";
-  $countNum = 0;
-for ($i = 0; $i < iconv_strlen($calculate); $i++) {
-  if ($calculate[$i] % 2 !== 0){
-    echo $calculate[$i]."<br/>";
-    $countNum++;
-    }
   }
 if ($countNum == 0){
     echo "Нечетных цифр не обнаружено!";
   }
 }
-backNumbersEven(1231231);
+backNumbersEven(441);
 
  echo "<h1>№7</h1>";
 //Задача №7 Задать массив из 7-ми элементов через предварительное описание типа,
@@ -286,10 +291,12 @@ $vetkaMax = intdiv(count($firstArray)-1,3);
         echo $firstArray[$counter]." больше чем ".$secondArray[$counter-1]."<br/>";
       }elseif ($firstArray[$counter]==$secondArray[$counter-1]) {
         echo $firstArray[$counter]." Равны ".$secondArray[$counter-1]."<br/>";
+
       }else {
         echo $firstArray[$counter]." меньше чем ".$secondArray[$counter-1]."<br/>";
       }
         $counter = $counter+3;
+
   }
 
 }
