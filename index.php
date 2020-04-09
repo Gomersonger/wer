@@ -136,13 +136,15 @@ backNumbersEven(1231231);
 //Задача №7 Задать массив из 7-ми элементов через предварительное описание типа,
 // заполнить его случайными значениями в одном цикле,
 // а в другом цикле вывести эти значения на экран.
+//ПРАВКА
 function buildArray($arraySize = 1){
   $myArray = [];
   for ($i = 0; $i < $arraySize; $i++) {
     $myArray[$i] = rand(1,999);
   }
-  for ($j = 0; $j < count($myArray) ; $j++) {
-    echo $myArray[$j]."<br/>";
+
+  foreach ($myArray as $value) {
+    echo $value."<br/>";
   }
 }
 buildArray(10);
@@ -188,13 +190,14 @@ function fir_tree($arraySize = 1){
   }
 $count = 0;
 $Chars = 0;
-  for ($j = 0; $j < count($treeArray); $j++) {
-    echo $treeArray[$j];
+
+foreach ($treeArray as $value) {
+  echo $value;
     $count = $count + 1;
   if ($count > $Chars){
-        echo "<br/>";
-        $count = 0;
-        $Chars += 1;
+      echo "<br/>";
+      $count = 0;
+      $Chars += 1;
     }
   }
 }
@@ -226,9 +229,10 @@ function maxNumberInArray($value=10)
     $myArray[$i] = rand(1,999);
   }
   $numberMax=$myArray[0];
-  for ($j=0; $j < count($myArray); $j++) {
-    if($numberMax < $myArray[$j]){
-      $numberMax = $myArray[$j];
+
+  foreach ($myArray as $value) {
+    if($numberMax < $value){
+      $numberMax = $value;
     }
   }
   echo $numberMax."";
@@ -247,16 +251,17 @@ function minNumberInArray()
     $myArray[$i] = rand(1,999);
   }
   $numberMin=$myArray[0];
-  for ($j=0; $j < count($myArray); $j++) {
-    if($numberMin > $myArray[$j]){
-      $numberMin = $myArray[$j];
+
+  foreach ($myArray as  $value) {
+    if($numberMin > $value){
+      $numberMin = $value;
     }
   }
   echo $numberMin."";
 }
 minNumberInArray(10);
 
-echo "<h1>№12</h1>";
+echo "<h1>№12 without break</h1>";
 
 // Задача №12  Даны два массива по 20 элементов каждый
 // (заполните случайными числами, так чтобы среди элементов массива при очередном
@@ -273,28 +278,23 @@ function comparisonTwoArrays(){
   for ($j = 0; $j < 20; $j++) {
     $secondArray[$j] = rand(-100,100);
   }
+$vetkaMax = intdiv(count($firstArray)-1,3);
 
   $counter = 2;
-  for ($q = 0; $q <count($firstArray); $q++) {
-    if($q == $counter){
-      if($firstArray[$counter] > $secondArray[$counter-1]){
+  for ($q = 0; $q <$vetkaMax; $q++) {
+      if($firstArray[$counter]>$secondArray[$counter-1]){
         echo $firstArray[$counter]." больше чем ".$secondArray[$counter-1]."<br/>";
-      }elseif ($firstArray[$counter] == $secondArray[$counter-1]) {
+      }elseif ($firstArray[$counter]==$secondArray[$counter-1]) {
         echo $firstArray[$counter]." Равны ".$secondArray[$counter-1]."<br/>";
-
       }else {
         echo $firstArray[$counter]." меньше чем ".$secondArray[$counter-1]."<br/>";
       }
         $counter = $counter+3;
-    }
-    if($counter>(count($secondArray))){
-      break;
-    }
   }
+
 }
+
 comparisonTwoArrays();
-
-
 echo "<h1>№13</h1>";
 
 //Создайте функцию, которая принимает на вход массив случайных чисел из диапазона [5..12].
@@ -374,4 +374,7 @@ function comparisonNumbersArray2($someArray=[]){
   }
 }
 comparisonNumbersArray2($a_array);
+
+
+
  ?>
